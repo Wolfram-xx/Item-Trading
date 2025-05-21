@@ -1,5 +1,5 @@
 # Установка
-git clone https://github.com/your-username/item-trading.git
+git clone https://github.com/Wolfram-xx/Ttem-Trading.git
 cd item-trading
 
 # Создаём виртуальное окружение
