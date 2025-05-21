@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    
+        {% include "nav.html" %}
+        
+        <div id="u_items">
+            <h1>
+                Это ваш профиль, <span class="rainbow-text">{{username}}</span>!<br>
+                Пользуйтесь им с умом!
+            </h1>
+            <div id='content'>
+        <div id="search">
+                <form method='get' action='/profile/'>
+                    <input type="text" placeholder="Поиск" id="search_input" name='search'>
+                    <select name="category" id="category_input">
+                        <option value=''>Категория</option>
+                        <option value="cars">Транспорт</option>
+                        <option value="houses">Недвижимость</option>
+                        <option value="personal">Личные вещи</option>
+                        <option value="for_house">Для дома и дачи</option>
+                        <option value="spare_parts">Запчасти и аксессуары</option>
+                        <option value="elect">Электроника</option>
+                    </select>
+                    <select name="condition" id="condition_input">
+                        <option value=''>Состояние</option> 
+                        <option value="new">Новый</option>
+                        <option value="not_new">Б/У</option>
+                    </select>
+                    <input type="submit" value="Найти" id="search_but">
+                </form>
+        </div>
+            <div id="ads_table">
+                {% for ad in ads %}                                  
+                    <div class="ad_div" onclick="window.location.href='/ad?id={{ad.id}}'">
+                        {% if ad.image_url %}
+                            <img class="preview-img" src={{ad.image_url}}>
+                        {% else %}
+                            <img class="preview-img" src="https://placehold.co/550x350">
+                        {% endif %}
+                        <h2>{{ad.title}}</h2>
+                        <p>{{ad.description}}</p>
+                        <div class="info_buts">
+                            <p class="centrist">{{ad.get_category_display}}</p>
+                            <p class="centrist">{{ad.get_condition_display}}</p>
+                            <p class="centrist">{{ad.created_at}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+</body>
+</html>

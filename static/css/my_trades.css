@@ -1,0 +1,68 @@
+#trades_table {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.trade_div {
+    width: 250px;
+    word-wrap: break-word;
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    height: 550px;
+    padding: 10px;
+    flex-direction: column;
+    display: flex;
+}
+
+.info_buts {
+    margin-top: auto;
+}
+
+.trade_buts {
+    width: 49%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    border: 1px solid #414141;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#content {
+    width: 90%;
+}
+
+#search_input{
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#user_id {
+    width: 15%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#status_input {
+    width: 15%;
+}
+#search_but {
+    width: 10%;
+    cursor: pointer;
+}
+
+#search {
+    margin: 10px;
+}
+#search form * {
+    
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    border: 1px solid #2c2c2c;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

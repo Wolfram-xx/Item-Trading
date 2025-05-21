@@ -1,0 +1,121 @@
+#ads_table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ad_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 750px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    border-radius: 20px;
+}
+.ad_div h2 {
+    font-size: 30px;
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.ad_div p {
+    width: 95%;
+    word-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centrist {
+    text-align: center;
+    margin-top: 0px;
+}
+
+
+
+.preview-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    display: block;
+    border-radius: 20px;
+}
+
+.ad_but {
+    width: 100%;
+    font: 20px 'MyriadPro', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.ad_but:hover {
+    background-color: aqua;
+    background: linear-gradient(270deg,
+                #00ffff, #00bfff, #1e90ff, #4169e1, #6a5acd, #8a2be2, #00ffff);
+    animation: rainbow 6s ease infinite;
+    background-size: 800% 800%;
+    color: white;
+}
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.info_buts {
+    width: 100%;
+    margin-top: auto;
+}
+
+#search {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#content {
+    width: 90%;
+}
+
+#search form {
+    width: 100%;
+}
+
+#search form * {
+    
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    border: 1px solid #2c2c2c;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#search_input {
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#category_input {
+    width: 20%;
+    padding: 2px;
+}
+#condition_input {
+    width: 20%;
+    padding: 2px;
+}
+#search_but {
+    width: 15%;
+    cursor: pointer;
+}

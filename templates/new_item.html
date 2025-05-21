@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New item</title>
+    <link rel="stylesheet" href="{% static 'css/new_item.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+    {% include "nav.html" %}
+    <div id="item_creat_form">
+        <h1>Новый <span class="rainbow-text">товар</span>!</h1>
+        <img id="preview-img" src="https://placehold.co/550x350" alt="Предпросмотр изображения">
+        <form method="post" action="create/">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Название" required maxlength="35">
+            <textarea name="descript" placeholder="Описание" required maxlength="200"></textarea>
+            <div id="img_buts">
+                <input type="text" name="url" id="url_input" placeholder="Ссылка на изображение" maxlength="150">
+                <button id="show-image-btn">
+                    <img src="../static/image/refresh_img.png" alt="Обновить" width="30" height="30">
+                </button>
+            </div>
+            <select name="category">
+                <option value="cars">Транспорт</option>
+                <option value="houses">Недвижимость</option>
+                <option value="personal">Личные вещи</option>
+                <option value="for_house">Для дома и дачи</option>
+                <option value="spare_parts">Запчасти и аксессуары</option>
+                <option value="elect">Электроника</option>
+            </select>
+            <select name="condition">
+                <option value="new">Новый</option>
+                <option value="not_new">Б/У</option>
+            </select>
+            <input type="submit" value="Создать" id="creat_but">
+        </form>
+    </div>
+
+     <script>
+        document.getElementById('show-image-btn').addEventListener('click', function (e) {
+            e.preventDefault(); 
+            const url = document.getElementById('url_input').value.trim();
+            const img = document.getElementById('preview-img');
+            if (url) {
+                img.src = url;
+            } else {
+                alert('Введите ссылку на изображение.');
+            }
+        });
+    </script>
+</body>
+</html>

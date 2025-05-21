@@ -1,0 +1,117 @@
+
+
+
+
+#u_items {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
+#ads_table {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
+.ad_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 750px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+
+}
+.ad_div h2 {
+    font-size: 30px;
+    word-wrap: break-word;
+    width: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.ad_div p {
+    width: 90%;
+    word-wrap: break-word;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.centrist {
+    text-align: center;
+    margin-top: 0px;
+    width: 90%;
+}
+
+.info_buts {
+    margin-top: auto;
+    width: 90%;
+}
+
+.preview-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    display: block;
+    border-radius: 20px;
+}
+
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('/static/fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
+}
+
+#search {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#content {
+    width: 90%;
+}
+
+#search form {
+    width: 100%;
+}
+
+#search form * {
+    
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    border: 1px solid #2c2c2c;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#search_input {
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#category_input {
+    width: 20%;
+    padding: 2px;
+}
+#condition_input {
+    width: 20%;
+    padding: 2px;
+}
+#search_but {
+    width: 15%;
+    cursor: pointer;
+}

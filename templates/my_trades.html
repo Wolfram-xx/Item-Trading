@@ -1,0 +1,41 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Trades</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_trades.css' %}">
+</head>
+<body>
+    {% include "nav.html" %}
+    <div id="content">
+    <div id="search">
+                <form method='get' action='/my_trades/'>
+                    <input type="text" placeholder="Поиск" id="search_input" name='search'>
+                    <input type="text" placeholder="Получатель" name="receiver" id="user_id">
+                    <select name="status" id="status_input">
+                        <option value=''>Статус</option>
+                        <option value="wait">Ожидает</option>
+                        <option value="accepted">Принята</option>
+                        <option value="denied">Отклонена</option>
+                    </select>
+                    <input type="submit" value="Найти" id="search_but">
+                </form>
+        </div>
+    <div id="trades_table">
+                {% for trade in trades %}
+                    <div class="trade_div">
+                        <p>Отправитель: Вы</p>
+                        <p>Получатель: {{trade.ad_receiver}}</p>
+                        <p>{{trade.comment}}</p>
+                        <div class="info_buts">
+                            <p class="centrist">Статус: {{trade.get_status_display}}</p>
+                            <p class="centrist">{{trade.created_at}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</body>
+</html>

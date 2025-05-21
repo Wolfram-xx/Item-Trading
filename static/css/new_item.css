@@ -1,0 +1,99 @@
+#item_creat_form form {
+    display: flex;
+    flex-direction: column;
+}
+html, body {
+    height: 100%; 
+}
+
+#item_creat_form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+
+form {
+    width: 30vw;
+}
+
+
+
+input {
+    font-size: 25px;
+    margin-top: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+select {
+    font-size: 25px;
+    margin-top: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    font-size: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+    resize: none;
+    height: 90px;
+}
+
+h1 {
+    font-family: 'MyriadPro', sans-serif;
+}
+
+#url_input {
+    width: 85%;
+}
+
+#img_buts {
+    display: flex;
+}
+
+#creat_but {
+    cursor: pointer;
+}
+
+#preview-img {
+    width: 550px;
+    height: 350px;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 15px;
+    border-radius: 20px;
+}
+
+#show-image-btn {
+    width: 35px;
+    height: 35px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+     background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('/static/fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
+}

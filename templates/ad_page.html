@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ad.title}}</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ad.css' %}">
+</head>
+<body>
+    {% include "nav.html" %}
+    
+    <div id="item_creat_form">
+        <h1>Редактирование <span class="rainbow-text">товара</span></h1>
+        {% if ad.image_url %}
+            <img id="preview-img" src={{ad.image_url}} alt="Предпросмотр изображения">
+        {% else %}
+            <img id="preview-img" src="https://placehold.co/550x350" alt="Предпросмотр изображения">
+        {% endif %}
+        <form method="post" action="edit/">
+            {% csrf_token %}
+            <input type="hidden" value={{ad.id}} id="id_num" name="id">
+            <input type="text" name="title" placeholder="Название" required value='{{ad.title}}'>
+            <textarea name="descript" placeholder="Описание" required>{{ad.description}}</textarea>
+            <div id="img_buts">
+                <input type="text" name="url" id="url_input" placeholder="Ссылка на изображение" value={{ad.image_url}}>
+                <button id="show-image-btn">
+                    <img src="../static/image/refresh_img.png" alt="Обновить" width="30" height="30">
+                </button>
+            </div>
+            <select name="category" value={{ad.category}}>
+                <option value="cars">Транспорт</option>
+                <option value="houses">Недвижимость</option>
+                <option value="personal">Личные вещи</option>
+                <option value="for_house">Для дома и дачи</option>
+                <option value="spare_parts">Запчасти и аксессуары</option>
+                <option value="elect">Электроника</option>
+            </select>
+            <select name="condition" value={{ad.condition}}>
+                <option value="new">Новый</option>
+                <option value="not_new">Б/У</option>
+            </select>
+            <input type="submit" value="Сохранить" id="creat_but">
+        </form>
+        <form method="post" action="delete/">
+            {% csrf_token %}
+            <input type="hidden" value={{ad.id}} id="id_num" name="id">
+            <input type="submit" value="Удалить" id="creat_but"> 
+        </form>
+    </div>
+    <script>
+        document.getElementById('show-image-btn').addEventListener('click', function (e) {
+            e.preventDefault(); 
+            const url = document.getElementById('url_input').value.trim();
+            const img = document.getElementById('preview-img');
+            if (url) {
+                img.src = url;
+            } else {
+                alert('Введите ссылку на изображение.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Django
+db.sqlite3
+*.mo
+*.pot
+media/
+staticfiles/
+
+# Tests
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# System
+.DS_Store
+Thumbs.db
+
+# dotenv
+.env

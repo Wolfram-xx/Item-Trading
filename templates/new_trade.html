@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New trade</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new_trade.css' %}">
+</head>
+<body>
+    {% include "nav.html" %}
+    <div id="trade_form_div">
+        <h1>Новый <span class="rainbow-text">обмен</span>!</h1>
+        <form method="post" action="/market/create_trade/">
+            {% csrf_token %}
+            <input type="hidden" value='{{ad_id}}' name="ad_id">
+            <textarea placeholder="Опишите условия, которые хотите предложить владельцу" maxlength="500" name="comment"></textarea>
+            <input type='submit' value='Отправить' id="send_but">
+        </form>        
+    </div>
+</body>
+</html>
